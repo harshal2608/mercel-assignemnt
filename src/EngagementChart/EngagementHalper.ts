@@ -10,6 +10,8 @@ function engagementMessageOverTimeChartOptions(
 
     if (channels.has(channelId)) {
       const existingData = channels.get(channelId);
+      //unlikely case
+      if (!existingData) return channels;
       existingData.push(item);
     } else {
       channels.set(channelId, [item]);
